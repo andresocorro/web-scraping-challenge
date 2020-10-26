@@ -9,6 +9,9 @@ app = Flask(__name__, template_folder='templates')
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 
+mars_page = mongo.db.mars_page
+mars_page.drop()
+
 
 @app.route("/")
 def home():
